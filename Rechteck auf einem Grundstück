@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+
+#Matplotlib Diagramm und Achse definieren
+fig, ax = plt.subplots()
+
+#Erstellen Sie ein einfaches Liniendiagramm
+ax.plot([0, 10],[0, 10])
+
+#Rechteck zum Plot hinzufügen
+ax.add_patch(Rectangle((1, 1), 2, 6))
+
+#Plot anzeigen
+plt.show()
