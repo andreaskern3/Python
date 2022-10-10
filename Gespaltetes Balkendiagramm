@@ -1,0 +1,17 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Daten erstellen
+quarter = ['Q1', 'Q2', 'Q3', 'Q4']
+product_A = [14, 17, 12, 9]
+product_B = [7, 15, 24, 18]
+
+# Diagrammparameter definieren
+N = 4 
+barWidth = .5
+xloc = np.arange(N)
+
+# gestapeltes Balkendiagramm anzeigen
+p1 = plt.bar(xloc, product_A, width=barWidth)
+p2 = plt.bar(xloc, product_B, bottom=product_A, width=barWidth)
+plt.show()
