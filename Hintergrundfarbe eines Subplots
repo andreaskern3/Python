@@ -1,0 +1,14 @@
+import matplotlib.pyplot as plt
+
+# Subplots definieren
+fig, ax = plt.subplots(2, 2)
+fig.tight_layout()
+
+# Definieren Sie die Hintergrundfarbe, die für jeden Subplot verwendet werden soll
+ax[0,0].set_facecolor('blue')
+ax[0,1].set_facecolor('pink')
+ax[1,0].set_facecolor('green')
+ax[1,1].set_facecolor('red')
+
+# Subplots anzeigen
+plt.show()
