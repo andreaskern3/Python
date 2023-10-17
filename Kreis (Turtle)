@@ -1,0 +1,6 @@
+# Vorbereitung (Bibliothek importieren)
+from turtle import *
+# ein Kreis mit Radius 100
+circle(100)
+# und Abschluss
+exitonclick()
