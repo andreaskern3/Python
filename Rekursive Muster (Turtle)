@@ -1,0 +1,49 @@
+from turtle import *
+shape("turtle")
+forward(250)
+left(60)
+width(5)
+color("green")
+x = 5
+forward(x)
+total = 0
+for i in 5, 7, 11, 13:
+   print(i)
+   total = total + i
+print(total)
+def line_without_moving():
+    forward(50)
+    backward(50)
+line_without_moving()
+right(90)
+line_without_moving()
+right(90)
+line_without_moving()
+def star():
+    for i in range(5):
+        line_without_moving()
+    right(360 / 5)
+
+star()
+def line_without_moving(length):
+    forward(length)
+    backward(length)
+line_without_moving(30)
+right(90)
+line_without_moving(40)
+def line_without_moving(length, angle):
+    left(angle)
+    forward(length)
+    backward(length)
+zahl = 75
+if zahl > 50:
+ print("Die Zahl ist größer als 50")
+else:
+ print("Die Zahl ist kleiner gleich 50")
+ def move():
+     direction = input("links oder rechts?")
+     if direction == "links":
+      left(60)
+     if direction == "rechts":
+      right(60)
+forward(50)
