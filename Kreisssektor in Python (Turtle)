@@ -1,0 +1,52 @@
+import turtle
+import math as m
+
+def paintSection(degree, radiusOuter, radiusInner, offset):
+    phi = 0.0
+    alpha = 1
+    # um den sektor dann zu schließen müssen wir die erste berechnete
+    # koordinate speichern
+    firstCord = None
+    # der offset legt den start winkel fests
+    sectionDegree = 0 + offset
+    # bevor wir starten müssen wir turtle erstmal das malen verbieten
+    turtle.up()
+
+    while sectionDegree <= degree + offset:
+        # wir rechnen sectionDegree in radiants um
+        phi = sectionDegree * (m.pi/180.0)
+        # berechnung der einzelnen koordinaten
+        x = radiusOuter * m.cos(phi)
+        y = radiusOuter * m.sin(phi)
+        # move turtle zur richtigen position
+        turtle.setpos(x, y)
+        if not turtle.isdown():
+            firstCord = (x, y)
+            turtle.begin_fill()
+            turtle.down()
+
+        # erhöhe den winkel
+        sectionDegree += alpha
+
+    while sectionDegree >= offset:
+        # wir rechnen sectionDegree in radiants um
+        phi = sectionDegree * (m.pi/180.0)
+        # berechnung der einzelnen koordinaten
+        x = radiusInner * m.cos(phi)
+        y = radiusInner * m.sin(phi)
+        # move turtle zur richtigen position
+        turtle.setpos(x, y)
+        # verringere den winkel
+        sectionDegree -= alpha
+
+    # nun können wir den sektor schließen
+    turtle.setpos(*firstCord)
+    #
+    turtle.end_fill()
+
+
+offset = 0 # der offset muss nicht unbedingt sein
+section = 360/6
+for n in range(3):
+    paintSection(section, 50, 15, offset)
+    offset+=section*2 # da wir eine section überspringen wollen, nehmen wir sie *2
